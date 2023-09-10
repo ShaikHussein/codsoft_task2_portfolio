@@ -1,0 +1,847 @@
+<html>
+<head>
+    <title>Personal Portfolio website HTML CSS only | codehal</title>
+<link rel="stylesheet" href="Portfolio.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+   
+body{
+    background: #081b29;
+    color: #ededed;
+}
+.port_photo{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.photo img{
+    max-width: 100%;
+    height: auto;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    position: relative;
+    font-size: 50px;
+    font-weight: 700;
+    color: #ededed;
+    text-decoration: none;
+}
+
+.logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+.navbar a {
+    font-size: 23px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+.navbar a:hover,
+.navbar a.active {
+    color:#00abf0;
+}
+
+.home {
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    background: #031540;
+    border-radius: 50%;
+    outline: 10px solid #00abf0;
+}
+
+.home-content
+{
+    color: #fff;
+    max-width: 500px;
+    padding-right: 10%;
+    padding-bottom: 5%; 
+}
+
+.home-content h1{
+    text-shadow: 2px 2px 0 #00abf0,3px 3px 0px #00abf0,4px 4px 10px #00abf0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+
+
+.home-content h1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p::before{
+     content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.home-content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+    
+}
+.home-content .btn-box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2s;
+}
+.btn-box a{
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: .5s;
+}
+
+.btn-box a:hover{
+    color: #00abf0;
+    background-color: white;
+}
+
+.btn-box a:nth-child(2){
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover{
+    color: #081b29;
+}
+.btn-box a:nth-child(2)::before{
+    background: #00abf0;
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a :hover::before{
+    width: 100%;
+
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.home-sci:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2s;
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    transition: .5s;
+}
+
+.home-sci a:hover{
+    background: #00abf0;
+    color: #fff;
+    border-color: #00abf0;
+    border: transparent;
+    box-shadow: inset 2px 2px 10px #031540;
+}
+
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a :hover::before{
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 500px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+/*home-imgHover:hover{
+    background:#081b29;
+    opacity: .8;
+}
+
+.home-imgHover::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120%;
+    height: 100%;
+    background:#081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index:100;
+}*/
+/*KEYFRAMES ANIMATION*/
+@keyframes showRight {
+    100% {
+        width: 0;    
+    }
+}
+
+@keyframes manipActiveHover {
+    100%{
+        pointer-events: auto;
+    }
+}
+.header span{
+    color: #00abf0;
+}
+.header{
+    position: fixed;
+    top:0%;
+    left: 0%;
+    width: 100%;
+    padding: 20px 10%;
+    background: url(low-poly-grid-haikei.svg);
+}
+html{
+    scroll-behavior: smooth;
+}
+span{
+    color: #00abf0;
+}
+#about{ 
+     height: 120vh; 
+     display: flex;
+     justify-content: space-between; 
+     align-items: center; 
+     padding: 0 10%; 
+     background:#031540; 
+ } 
+  
+ #contact{ 
+     height:100vh; 
+      display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     padding: 0 10%; 
+     background: #0056b3; 
+ } 
+ .contact__input { 
+   width: 100%; 
+   font-size: var(--normal-font-size); 
+   font-weight: var(--font-semi); 
+   padding: 1rem; 
+   border-radius: .5rem; 
+   border: 1.5px solid var(--second-color); 
+   outline: none; 
+   margin-bottom: var(--mb-4); 
+ } 
+  
+ .contact__button { 
+   display: block; 
+   border: none; 
+   outline: none; 
+   font-size: var(--normal-font-size); 
+   cursor: pointer; 
+ } 
+ #Projects{ 
+     background:#031540; 
+     height: 100vh; 
+     color: #007bff;
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     padding: 0 10%; 
+  
+  
+ } 
+ certificate-image img:hover{ 
+     opacity: 0; 
+  
+ } 
+ /* Style for the About Section */   
+ .container { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     max-width: 1200px; 
+     margin: 0 auto; 
+     padding: 0 20px; 
+ } 
+  
+ .about-content { 
+     flex: 1; 
+     color: white;
+     margin-right: 20px; 
+ } 
+  
+ .about .section-title { 
+     font-size: 50px; 
+     margin-bottom: 20px; 
+     color: #00abf0; 
+ } 
+  
+ .section-text { 
+     font-size: 20px; 
+     line-height: 1.6; 
+     margin-bottom: 20px; 
+     color: #666; 
+ } 
+  
+ .btn { 
+     display: inline-block; 
+     padding: 12px 24px; 
+     background-color: #007bff; 
+     color: #fff; 
+     border: none; 
+     border-radius: 5px; 
+     font-size: 16px; 
+     text-decoration: none; 
+ } 
+  
+ .about-image { 
+     flex: 1; 
+     text-align: center; 
+ } 
+  
+ .about-image img { 
+     max-width: 80%; 
+     border-radius: 10px; 
+ } 
+  
+ /* Adjustments for Responsive Design */ 
+ @media (max-width: 768px) { 
+     .container { 
+         flex-direction: column; 
+     } 
+  
+     .about-content, 
+     .about-image { 
+         margin: 1; 
+         text-align: center; 
+     } 
+ } 
+ 
+ /* Style for the Projects Section */ 
+ .projects { 
+     padding: 80px 0; 
+     background-color: #f9f9f9; 
+ } 
+  
+ .projects .container { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     max-width: 1200px; 
+     margin: 0 auto; 
+     padding: 0 20px; 
+ } 
+  
+ .projects-content { 
+     flex: 1; 
+     margin-right: 20px; 
+ } 
+  
+ .projects .section-title { 
+     font-size: 50px; 
+     margin-bottom: 20px; 
+     color: #00abf0; 
+ } 
+  
+ .project-item { 
+     margin-bottom: 40px; 
+ } 
+  
+ .project-description { 
+     font-size: 18px; 
+     line-height: 1.6; 
+     margin-bottom: 15px; 
+     color: #fcfcfc; 
+ } 
+  
+ .project-demo-link, 
+ .project-code-link { 
+     display: inline-block; 
+     padding: 10px 20px; 
+     margin-right: 15px; 
+     background-color: #007bff; 
+     color: #fff; 
+     border: none; 
+     border-radius: 5px; 
+     font-size: 16px; 
+     text-decoration: none; 
+     transition: background-color 0.3s ease; 
+ } 
+  
+ .project-demo-link:hover, 
+ .project-code-link:hover { 
+     background-color: #0056b3; 
+ } 
+  
+ .projects-images { 
+     display: flex; 
+     flex-direction: column; 
+ } 
+  
+ .projects-image { 
+     flex: 1; 
+     text-align: center; 
+     position: relative; 
+     overflow: hidden; 
+     margin: 10px; 
+ } 
+  
+ .projects-image-top { 
+     order: 1; /* Display at the top */ 
+ } 
+  
+ .projects-image-bottom { 
+     order: 2; /* Display at the bottom */ 
+ } 
+  
+ .projects-image img { 
+     max-width: 100%; 
+     border-radius: 10px; 
+     transition: transform 0.3s ease; 
+ } 
+  
+ .projects-image:hover img { 
+     transform: scale(1.1); 
+ } 
+ .projects-images { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     margin-top: 20px; /* Adjust the spacing between the screenshots */ 
+ } 
+  
+ .projects-image img { 
+     width: 300px; /* Set the desired width */ 
+     border-radius: 10px; 
+     transition: transform 0.3s ease; 
+ } 
+  
+ .projects-image:hover img { 
+     transform: scale(1.1); 
+ } 
+ /* Style for the Projects Section */ 
+ .projects { 
+     padding: 80px 0; 
+     background-color: #f9f9f9; 
+ } 
+  
+ .projects .container { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     max-width: 1200px; 
+     margin: 0 auto; 
+     padding: 0 20px; 
+ } 
+  
+ .projects-content { 
+     flex: 1; 
+     margin-right: 20px; 
+ } 
+  
+ .section-title { 
+     font-size: 50px; 
+     margin-bottom: 20px; 
+     color: #333; 
+ } 
+  
+ .project-item { 
+     margin-bottom: 40px; 
+ } 
+  
+ .project-title { 
+     font-size: 30px; 
+     margin-bottom: 10px; 
+     color:white; 
+ } 
+  
+ .project-description { 
+     font-size: 20px; 
+     line-height: 1.6; 
+     margin-bottom: 15px; 
+     color: white; 
+ } 
+  
+ .project-demo-link, 
+ .project-code-link { 
+     display: inline-block; 
+     padding: 10px 20px; 
+     margin-right: 15px; 
+     background-color: #007bff; 
+     color: #fff; 
+     border: none; 
+     border-radius: 5px; 
+     font-size: 16px; 
+     text-decoration: none; 
+     transition: background-color 0.3s ease; 
+ } 
+ .projects-images { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     margin-top: 20px; /* Adjust the spacing between the screenshots */ 
+ } 
+  
+ .projects-image img { 
+     width: 300px;  
+     border-radius: 10px; 
+     transition: transform 0.3s ease; 
+ } 
+  
+ .projects-images { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+     margin-top: 20px;  
+ } 
+  
+ .projects-image img { 
+     width: 300px;  
+     height: 200px; 
+     border-radius: 10px; 
+     transition: transform 0.3s ease; 
+ } 
+  
+ .projects-image:last-child img { 
+     width: 600px; /* Set the width of the second (last) screenshot */ 
+ } 
+  
+ .projects-image:hover img { 
+     transform: scale(1.1); 
+ } 
+  
+  
+ .project-demo-link:hover, 
+ .project-code-link:hover { 
+     background-color: #0056b3; 
+ } 
+  
+ .projects-image { 
+     flex: 1; 
+     text-align: center; 
+     position: relative; 
+     overflow: hidden; 
+ } 
+  
+ .Projects-image img { 
+     max-width: 90%; /* Adjust the max-width to your preference */ 
+     border-radius: 10px; 
+     transition: transform 0.3s ease; 
+ } 
+  
+ .Projects-image:hover img { 
+     transform: scale(1.1); 
+ } 
+ 
+ /* Style for the Contact Section */ 
+ .contact { 
+     padding: 80px 0; 
+     background-color: #f9f9f9; 
+ } 
+  
+ .contact .container { 
+     max-width: 1200px; 
+     margin: 0 auto; 
+     padding: 0 20px; 
+ } 
+  
+ .section-title { 
+     font-size: 36px; 
+     margin-bottom: 20px; 
+     color: #333; 
+ } 
+  
+ .contact-content { 
+     display: flex; 
+     justify-content: space-between; 
+     align-items: center; 
+ } 
+  
+ .contact-form { 
+     flex: 1; 
+     background-color: #fff; 
+     padding: 50px; 
+     border-radius: 10px; 
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+ } 
+  
+ .form-group { 
+     margin-bottom: 40px; 
+ } 
+  
+ .form-group input, 
+ .form-group textarea { 
+     width: 100%; 
+     padding: 10px; 
+     border: 1px solid #ccc; 
+     border-radius: 5px; 
+     outline: none; 
+ } 
+  
+  
+  
+ .contact-image { 
+     flex: 1; 
+     padding-left: 200px; 
+ } 
+  
+ .contact-image img { 
+     max-width: 100%; 
+     height: auto; 
+     border-radius: 10px; 
+ } 
+ #contact h2{ 
+     text-align: center; 
+     font-size: 45px; 
+     margin-bottom:450px; 
+ } 
+ html { 
+     scroll-behavior: smooth; 
+ } 
+  
+</style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Porfo<span>lio</span></a>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#Projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm Hussein</h1>
+            <h2>Frontend Developer</h2>
+            <p>Design is not just what it looks like and feels like.Design is how it works.</p>
+            <div class="btn-box">
+                <a href="#about">Let's Talk</a>
+            </div>
+        </div>
+        <div class="port_photo">
+            <div class="photo">
+                <img src="web image.jpeg" alt="photo" width="400px" height="400px">
+            </div>
+        </div>
+
+        <div class="home-sci">
+            <a href="https:www.facebook.com"><i class='bx bxl-facebook'></i></a>
+            <a href="mailto:shaikhussein959@gmail.com"><i class="bx bxl-gmail"></i></a>
+            <a href="https://wa.ma/98498016905"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.bxl-linkedin.com/in/shaikhussein"><i class='bx bxl-linkedin' ></i></a>
+        </div>
+        <span class="home-imgHover"></span>
+    </section>
+    <section id="about" class="about"> 
+        <div class="container"> 
+            <div class="about-content"> 
+                <h2 class="section-title">About Me</h2> 
+                <p class="section-text"> 
+                    I am a passionate B.Tech student with a strong interest in technology and its applications. Currently pursuing my degree in Computer Science Engineering, I am dedicated to learning and growing in the field. 
+                </p> 
+                <p class="section-text"> 
+                    During my academic journey, I have gained valuable knowledge in programming languages like Java and Python. I have also been exposed to various subjects including Data Structures, Algorithms, and Software Engineering, which have expanded my problem-solving skills and analytical thinking. 
+                </p> 
+                <p class="section-text"> 
+                    Apart from my academic pursuits, I actively engage in projects and coding challenges to apply my theoretical knowledge in practical scenarios. This hands-on experience has helped me develop a deep understanding of software development and its real-world implications. 
+                </p> 
+     
+     
+            </div> 
+            <div class="about-image"> 
+                <img src="About.jpg" alt="Profile Image"> 
+            </div> 
+        </div> 
+    </section> 
+    <section id="Projects" class="Projects"> 
+        <div class="container"> 
+            <div class="Projects-content"> 
+                <h2 class="section-title">Projects</h2> 
+                <div class="Project-item"> 
+                    <h3 class="Project-title">Image Haze Removal By using Dark Chanak Prior.</h3> 
+                    <p class="Project-description"> 
+                        <p></p>
+                    </p> 
+     
+                </div> 
+     
+                <div class="Project-item"> 
+                    <h3 class="Project-title">Landing Page</h3> 
+                    <p class="Project-description"> 
+
+                        Designed a responsive landing page using HTML, CSS, and JavaScript. The landing page showcases a product and encourages users to sign up for more information. 
+                    </p> 
+     
+                </div> 
+            </div> 
+            <div class="projects-images"> 
+                <div class="projects-image projects-image-top"> 
+                    <img src="project1.webp" alt="Image Haze Removal By using Dark Chanak Prior." title="Image Haze Removal By using Dark Chanak Prior."> 
+                </div> 
+                <div class="projects-image projects-image-bottom"> 
+                    <img src="landing.png" alt="Landing Page Screenshot" title="Landing Page Screenshot"> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+    <!--<section class="Skills" id="Skills">
+        <div class="Skills-content">
+            <h1>Skills</h1>
+             <p>Lorem ipsum dolor sit amet consectetur<br>
+                 adipisicing elit. Unde eaque ipsum, porro<br> assumenda possimus aliquam.</p>
+        </div>
+        <div class="port_photo">
+            <div class="photo">
+                <img src="bmw.jpeg" alt="photo">
+            </div>
+        </div>
+    </section>-->
+    <section id="contact" class="contact"> 
+        <div class="container"> 
+         <h2>Contact Me</h2>
+            <div class="contact-content"> 
+                <div class="contact-form"> 
+                    <form action="#" method="post"> 
+                        <div class="form-group"> 
+                            <input type="text" name="name" placeholder="Your Name" required size="30px"> 
+                        </div> 
+                        <div class="form-group"> 
+                            <input type="email" name="email" placeholder="Your Email" required> 
+                        </div> 
+                        <div class="form-group"> 
+                            <textarea name="message" placeholder="Your Message" rows="4" required></textarea> 
+                        </div> 
+                        <button type="submit" class="btn">Send Message</button> 
+                    </form> 
+                </div> 
+                <div class="contact-image"> 
+                    <img src="contact.jpeg" alt="Contact Image"> 
+                </div> 
+            </div> 
+        </div> 
+    </section>
+</body>
+</html>
